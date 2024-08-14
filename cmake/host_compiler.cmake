@@ -81,6 +81,7 @@ if(DPCPP_HOST_COMPILER_KIND STREQUAL "GNU")
     platform_gnu_nowarn_ccxx_flags(DPCPP_CXX_NOWARN_FLAGS ${DPCPP_HOST_COMPILER_MAJOR_VER}.${DPCPP_HOST_COMPILER_MINOR_VER})
 
     append(CMAKE_CXX_FLAGS "-fsycl-host-compiler=${DPCPP_HOST_COMPILER}")
+    append(CMAKE_CXX_FLAGS "-fno-sycl-unnamed-lambda")
     append_host_compiler_options(CMAKE_CXX_FLAGS "${DPCPP_HOST_COMPILER_OPTS}")
 
     # When using a non-default host compiler the main compiler doesn't
